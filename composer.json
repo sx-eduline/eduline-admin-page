@@ -1,5 +1,5 @@
 {
-  "name": "eduline-v5/admin-config-page",
+  "name": "eduline/admin-config-page",
   "description": "eduline-v5 admin config page",
   "require": {
     "php": ">=7.1.0"
