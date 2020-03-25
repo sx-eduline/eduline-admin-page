@@ -64,8 +64,8 @@ class PageForm extends Response
      */
     public function withSystemConfig()
     {
-        $this->saveMethod  = 'PUT';
-        $this->savePostUrl = '/system/config/save';
+        $this->saveMethod  = 'POST';
+        $this->savePostUrl = '/admin/system/config/save';
     }
 
 }
