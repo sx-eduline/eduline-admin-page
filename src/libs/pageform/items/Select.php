@@ -43,9 +43,9 @@ class Select extends ArgsInterface
      * @param    bool|boolean                   $megre [description]
      * @return   [type]                                [description]
      */
-    public function megreTags(bool $megre = true) : self
+    public function megreTags(bool $megre = true): self
     {
-    	if ($this->getArgs('multiple') == 1) {
+        if ($this->getArgs('multiple') == 1) {
             return $this->setArgs('megre_tags', $megre);
         }
 
@@ -62,6 +62,18 @@ class Select extends ArgsInterface
     public function placeholder(string $placeholder = null): self
     {
         return $this->setArgs('placeholder', $placeholder);
+    }
+
+    /**
+     * 设置选项
+     * @Author   Martinsun<syh@sunyonghong.com>
+     * @DateTime 2020-03-25
+     * @param    array                          $options 选项项目 ['title'=>'显示文字','value'=>'值']
+     * @return   [type]                                  [description]
+     */
+    public function options(array $options)
+    {
+        return $this->setArgs('options', $options);
     }
 
 }
