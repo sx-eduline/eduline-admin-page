@@ -57,4 +57,15 @@ class PageForm extends Response
         return $contents;
     }
 
+    /**
+     * 系统配置
+     * @Author   Martinsun<syh@sunyonghong.com>
+     * @DateTime 2020-03-25
+     */
+    public function withSystemConfig()
+    {
+        $this->saveMethod  = 'PUT';
+        $this->savePostUrl = '/system/config/save';
+    }
+
 }
