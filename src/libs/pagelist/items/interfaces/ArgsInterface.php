@@ -85,7 +85,7 @@ class ArgsInterface
 
     public function __call($method, $args)
     {
-        return $this->setArgs($method, $args);
+        return $this->setArgs($method, ...$args);
     }
 
     public static function __callStatic($method, $args)
