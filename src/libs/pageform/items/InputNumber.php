@@ -14,7 +14,7 @@ class InputNumber extends ArgsInterface
      * @param    int|integer                    $length [description]
      * @return   self
      */
-    public function min(int $length = 1): self
+    public function min($length = 1): self
     {
         return $this->setArgs('min', $length);
     }
@@ -25,7 +25,7 @@ class InputNumber extends ArgsInterface
      * @param    int|integer                    $length [description]
      * @return   self
      */
-    public function max(int $length = 1): self
+    public function max($length = 1): self
     {
         return $this->setArgs('max', $length);
     }
@@ -47,7 +47,7 @@ class InputNumber extends ArgsInterface
      * @param    int|integer                    $step [description]
      * @return   self
      */
-    public function step(int $step = 1): self
+    public function step($step = 1): self
     {
         return $this->setArgs('step', $step);
     }

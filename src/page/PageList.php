@@ -20,13 +20,14 @@ class PageList extends Response
 
         $contents['searchKey'] = $this->getSearchKey();
 
-        $contents = array_merge($this->assignList,$contents);
+        $contents = array_merge($this->assignList, $contents);
 
         return $contents;
     }
 
-    protected function getDatas(){
-        $data =  $this->datas;
+    protected function getDatas()
+    {
+        $data = $this->datas;
         if (is_object($data)) {
             $list  = $data;
             $data  = [];
@@ -96,7 +97,7 @@ class PageList extends Response
                     'key'   => $key,
                     'title' => $key,
                     'type'  => 'input',
-                    'args'  => (object) [],
+                    'args'  => new \ArrayObject,
                 ];
             }
 

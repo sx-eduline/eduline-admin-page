@@ -34,14 +34,14 @@ class PageForm extends Response
                 }
                 // 不存在args参数时,设置类型
                 if (!$item['args']) {
-                    $item['args'] = (object) [];
+                    $item['args'] = new \ArrayObject;
                 }
             } else {
                 $item = [
                     'key'   => $key,
                     'title' => $key,
                     'type'  => 'input',
-                    'args'  => (object) [],
+                    'args'  => new \ArrayObject,
                 ];
             }
 
