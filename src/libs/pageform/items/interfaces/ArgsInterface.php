@@ -6,7 +6,7 @@ class ArgsInterface
 {
     protected $args = [];
     protected $title;
-    protected $visible;
+    protected $visible = true;
 
     /**
      * 设置参数
