@@ -26,6 +26,10 @@ class PageForm extends Response
         $_pageKey = [];
         foreach ($pageKey as $key => $v) {
             if (is_callable([$v, 'toArray'])) {
+                // 显示条件检测
+                if (!$v->isVisible()) {
+                    continue;
+                }
                 $item        = $v->toArray();
                 $item['key'] = $key;
                 // title与key一致

@@ -6,6 +6,7 @@ class ArgsInterface
 {
     protected $args = [];
     protected $title;
+    protected $visible = true;
 
     /**
      * 设置参数
@@ -91,6 +92,22 @@ class ArgsInterface
     public static function __callStatic($method, $args)
     {
         return self::make()->setArgs($method, $args);
+    }
+
+    public function visible($visible = true)
+    {
+        if ($visible instanceof \Closure) {
+            $visible = app()->invokeFunction($visible);
+        }
+
+        $this->visible = $visible;
+
+        return $this;
+    }
+
+    public function isVisible()
+    {
+        return $this->visible;
     }
 
 }

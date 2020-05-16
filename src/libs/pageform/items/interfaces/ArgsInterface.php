@@ -6,6 +6,7 @@ class ArgsInterface
 {
     protected $args = [];
     protected $title;
+    protected $visible;
 
     /**
      * 设置参数
@@ -127,6 +128,22 @@ class ArgsInterface
     public function help(string $helpinfo): self
     {
         return $this->setArgs('helpinfo', $helpinfo);
+    }
+
+    public function visible($visible = true)
+    {
+        if ($visible instanceof \Closure) {
+            $visible = app()->invokeFunction($visible);
+        }
+
+        $this->visible = $visible;
+
+        return $this;
+    }
+
+    public function isVisible()
+    {
+        return $this->visible;
     }
 
 }
