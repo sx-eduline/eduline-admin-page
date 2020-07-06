@@ -1,6 +1,6 @@
 {
   "name": "eduline/admin-config-page",
-  "description": "eduline-v5 admin config page",
+  "description": "eduline-v5 后台页面配置",
   "require": {
     "php": ">=7.1.0"
   },
