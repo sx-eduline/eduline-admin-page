@@ -54,9 +54,10 @@ class ArgsInterface
      */
     public function toArray(): array
     {
+        $args = $this->getArgs();
         return [
             'type'  => $this->type,
-            'args'  => $this->getArgs(),
+            'args'  => empty($args) ? new \ArrayObject : $args,
             'title' => $this->title,
         ];
     }
