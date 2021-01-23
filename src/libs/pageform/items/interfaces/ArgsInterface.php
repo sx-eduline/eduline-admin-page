@@ -1,6 +1,10 @@
 <?php
-declare (strict_types = 1);
+declare (strict_types=1);
+
 namespace eduline\admin\libs\pageform\items\interfaces;
+
+use ArrayObject;
+use Closure;
 
 class ArgsInterface
 {
@@ -8,24 +12,52 @@ class ArgsInterface
     protected $title;
     protected $visible = true;
 
-    /**
-     * 设置参数
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    [type]                         $name  [description]
-     * @param    [type]                         $value [description]
-     */
-    public function setArgs($name, $value)
+    public static function __callStatic($method, $args)
     {
-        $this->args[$name] = $value;
+        return self::make()->setArgs($method, ...$args);
+    }
+
+    /**
+     * 创建一个实例
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @return   static
+     */
+    public static function make()
+    {
+        return new static();
+    }
+
+    public function title($title = ''): self
+    {
+        $this->title = $title;
 
         return $this;
     }
 
     /**
+     * 格式化数据
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @return   array
+     */
+    public function toArray(): array
+    {
+        $args = $this->getArgs();
+        return [
+            'type'  => $this->type,
+            'args'  => empty($args) ? new ArrayObject : $args,
+            'title' => $this->title,
+        ];
+    }
+
+    /**
      * 获取参数
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
      * @param    [type]                         $name [description]
      * @return   [type]                               [description]
      */
@@ -39,33 +71,26 @@ class ArgsInterface
 
     }
 
-    public function title($title = ''): self
+    /**
+     * 设置参数
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param    [type]                         $name  [description]
+     * @param    [type]                         $value [description]
+     */
+    public function setArgs($name, $value)
     {
-        $this->title = $title;
+        $this->args[$name] = $value;
 
         return $this;
     }
 
     /**
-     * 格式化数据
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @return   array
-     */
-    public function toArray(): array
-    {
-        $args = $this->getArgs();
-        return [
-            'type'  => $this->type,
-            'args'  => empty($args) ? new \ArrayObject : $args,
-            'title' => $this->title,
-        ];
-    }
-
-    /**
      * 是否存在某个参数
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
      * @param    [type]                         $name 参数名
      * @return   boolean
      */
@@ -74,32 +99,17 @@ class ArgsInterface
         return isset($this->args[$name]) ? true : false;
     }
 
-    /**
-     * 创建一个实例
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @return   static
-     */
-    public static function make()
-    {
-        return new static();
-    }
-
     public function __call($method, $args)
     {
         return $this->setArgs($method, ...$args);
     }
 
-    public static function __callStatic($method, $args)
-    {
-        return self::make()->setArgs($method, ...$args);
-    }
-
     /**
      * 是否禁用
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    bool|boolean                   $disabled
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param bool|boolean $disabled
      * @return   self
      */
     public function disabled(bool $disabled = true): self
@@ -109,9 +119,10 @@ class ArgsInterface
 
     /**
      * 是否必须填写
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    bool|boolean                   $required
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param bool|boolean $required
      * @return   self
      */
     public function required(bool $required = true): self
@@ -121,9 +132,10 @@ class ArgsInterface
 
     /**
      * 设置帮助信息
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-16
-     * @param    string $helpinfo 帮助信息,展示在字段的前面
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-16
+     *
+     * @param string $helpinfo 帮助信息,展示在字段的前面
      * @return   self
      */
     public function help(string $helpinfo): self
@@ -133,7 +145,7 @@ class ArgsInterface
 
     public function visible($visible = true)
     {
-        if ($visible instanceof \Closure) {
+        if ($visible instanceof Closure) {
             $visible = app()->invokeFunction($visible);
         }
 

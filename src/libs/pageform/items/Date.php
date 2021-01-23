@@ -1,5 +1,6 @@
 <?php
-declare (strict_types = 1);
+declare (strict_types=1);
+
 namespace eduline\admin\libs\pageform\items;
 
 use eduline\admin\libs\pageform\items\interfaces\ArgsInterface;
@@ -10,9 +11,10 @@ class Date extends ArgsInterface
 
     /**
      * 日期类型
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string                         $type options\DateType::class
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string $type options\DateType::class
      * @return   [type]                               [description]
      */
     public function dateType(string $type): self
@@ -22,9 +24,10 @@ class Date extends ArgsInterface
 
     /**
      * 默认提示文字
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string                         $placeholder [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string $placeholder [description]
      * @return   [type]                                      [description]
      */
     public function placeholder(string $placeholder = '选择日期'): self
@@ -39,9 +42,10 @@ class Date extends ArgsInterface
 
     /**
      * 开始时间提示文字
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string                         $placeholder [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string $placeholder [description]
      * @return   [type]                                      [description]
      */
     public function startPlaceholder(string $placeholder = '开始日期'): self
@@ -56,9 +60,10 @@ class Date extends ArgsInterface
 
     /**
      * 结束时间提示文字
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string                         $placeholder [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string $placeholder [description]
      * @return   [type]                                      [description]
      */
     public function endPlaceholder(string $placeholder = '结束日期'): self
@@ -73,9 +78,10 @@ class Date extends ArgsInterface
 
     /**
      * 设置日期解析格式
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string                         $format [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string $format [description]
      * @return   [type]                                 [description]
      */
     public function format(string $format = 'yyyy-MM-dd HH:mm:ss'): self

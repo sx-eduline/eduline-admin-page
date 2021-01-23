@@ -1,5 +1,6 @@
 <?php
-declare (strict_types = 1);
+declare (strict_types=1);
+
 namespace eduline\admin\libs\pageform\items;
 
 use eduline\admin\libs\pageform\items\interfaces\ArgsInterface;
@@ -10,9 +11,10 @@ class Cascader extends ArgsInterface
 
     /**
      * 触发事件
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string                         $tigger options\Tigger::class
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string $tigger options\Tigger::class
      * @return   self
      */
     public function tigger(string $tigger = 'click'): self
@@ -22,9 +24,10 @@ class Cascader extends ArgsInterface
 
     /**
      * 默认提示文字
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string|null                    $placeholder [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string|null $placeholder [description]
      * @return   self
      */
     public function placeholder(string $placeholder = null): self

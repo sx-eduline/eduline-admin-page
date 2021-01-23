@@ -1,5 +1,6 @@
 <?php
-declare (strict_types = 1);
+declare (strict_types=1);
+
 namespace eduline\admin\libs\pageform\items;
 
 use eduline\admin\libs\pageform\items\interfaces\ArgsInterface;
@@ -10,9 +11,10 @@ class Input extends ArgsInterface
 
     /**
      * 最小长度
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    int|integer                    $length [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param int|integer $length [description]
      * @return   self
      */
     public function minlength(int $length = 1): self
@@ -22,9 +24,10 @@ class Input extends ArgsInterface
 
     /**
      * 最大长度
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    int|integer                    $length [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param int|integer $length [description]
      * @return   self
      */
     public function maxlength(int $length = 99): self
@@ -34,9 +37,10 @@ class Input extends ArgsInterface
 
     /**
      * 是否显示字数统计
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    bool|boolean                   $show [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param bool|boolean $show [description]
      * @return   self
      */
     public function wordLimit(bool $show = true): self
@@ -46,9 +50,10 @@ class Input extends ArgsInterface
 
     /**
      * 显示的icon图标名称,class名
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string|null                    $icon [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string|null $icon [description]
      * @return   self
      */
     public function icon(string $icon = null): self
@@ -62,9 +67,10 @@ class Input extends ArgsInterface
 
     /**
      * 显示的图标位置
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string|null                    $postion options\IconPosition::class
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string|null $postion options\IconPosition::class
      * @return   self
      */
     public function iconPosition(string $postion = null): self
@@ -78,9 +84,10 @@ class Input extends ArgsInterface
 
     /**
      * 默认提示文字
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string|null                    $placeholder [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string|null $placeholder [description]
      * @return   self
      */
     public function placeholder(string $placeholder = null): self
@@ -90,9 +97,10 @@ class Input extends ArgsInterface
 
     /**
      * 前后置类容
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string|null                    $slot [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string|null $slot [description]
      * @return   self
      */
     public function slot(string $slot = null): self
@@ -102,9 +110,10 @@ class Input extends ArgsInterface
 
     /**
      * 前后置位置
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string|null                    $postion [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string|null $postion [description]
      * @return   self
      */
     public function slotPostion(string $postion = null): self

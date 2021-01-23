@@ -1,4 +1,5 @@
 <?php
+
 namespace eduline\admin\page\traits;
 
 /**
@@ -8,11 +9,13 @@ trait SearchKey
 {
     /**
      * 页面字段
+     *
      * @var array
      */
     public $searchKey = [];
     /**
      * 页面字段排序顺序
+     *
      * @var array
      */
     public $searchKeySort = [];

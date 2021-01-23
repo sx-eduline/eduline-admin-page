@@ -1,5 +1,6 @@
 <?php
-declare (strict_types = 1);
+declare (strict_types=1);
+
 namespace eduline\admin\libs\pagelist\items;
 
 use eduline\admin\libs\pagelist\items\interfaces\ArgsInterface;

@@ -1,4 +1,5 @@
 <?php
+
 namespace eduline\admin\libs\pageform\items;
 
 use eduline\admin\libs\pageform\items\interfaces\ArgsInterface;
@@ -6,11 +7,13 @@ use eduline\admin\libs\pageform\items\interfaces\ArgsInterface;
 class Textarea extends ArgsInterface
 {
     protected $type = 'textarea';
+
     /**
      * 最小长度
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    int|integer                    $length [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param int|integer $length [description]
      * @return   self
      */
     public function minlength(int $length = 1): self
@@ -20,9 +23,10 @@ class Textarea extends ArgsInterface
 
     /**
      * 最大长度
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    int|integer                    $length [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param int|integer $length [description]
      * @return   self
      */
     public function maxlength(int $length = 99): self
@@ -32,9 +36,10 @@ class Textarea extends ArgsInterface
 
     /**
      * 是否显示字数统计
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    bool|boolean                   $show [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param bool|boolean $show [description]
      * @return   self
      */
     public function wordLimit(bool $show = true): self
@@ -44,9 +49,10 @@ class Textarea extends ArgsInterface
 
     /**
      * 默认提示文字
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string|null                    $placeholder [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string|null $placeholder [description]
      * @return   self
      */
     public function placeholder(string $placeholder = null): self
@@ -56,9 +62,10 @@ class Textarea extends ArgsInterface
 
     /**
      * 文本框默认显示行数,默认2行
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    int|integer                    $rows [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param int|integer $rows [description]
      * @return   self
      */
     public function rows(int $rows = 2): self

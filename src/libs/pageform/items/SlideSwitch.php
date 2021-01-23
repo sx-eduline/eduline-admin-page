@@ -1,4 +1,5 @@
 <?php
+
 namespace eduline\admin\libs\pageform\items;
 
 use eduline\admin\libs\pageform\items\interfaces\ArgsInterface;
@@ -6,11 +7,13 @@ use eduline\admin\libs\pageform\items\interfaces\ArgsInterface;
 class SlideSwitch extends ArgsInterface
 {
     protected $type = 'switch';
+
     /**
      * 开启显示文字
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string                         $text [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string $text [description]
      * @return   self
      */
     public function activeText(string $text = '开启'): self
@@ -20,9 +23,10 @@ class SlideSwitch extends ArgsInterface
 
     /**
      * 开启选中值
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    integer                        $value [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param integer $value [description]
      * @return   self
      */
     public function activeValue($value = 1): self
@@ -32,9 +36,10 @@ class SlideSwitch extends ArgsInterface
 
     /**
      * 关闭显示文字
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string                         $text [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string $text [description]
      * @return   self
      */
     public function inactiveText(string $text = '关闭'): self
@@ -44,9 +49,10 @@ class SlideSwitch extends ArgsInterface
 
     /**
      * 关闭选中值
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    integer                        $value [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param integer $value [description]
      * @return   self
      */
     public function inactiveValue($value = 1): self

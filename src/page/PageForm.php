@@ -1,7 +1,9 @@
 <?php
-declare (strict_types = 1);
+declare (strict_types=1);
+
 namespace eduline\admin\page;
 
+use ArrayObject;
 use eduline\admin\page\interfaces\Response;
 
 class PageForm extends Response
@@ -13,8 +15,9 @@ class PageForm extends Response
 
     /**
      * 获取数据的方法
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
      * @return   array
      */
     protected function getContent(): array
@@ -38,14 +41,14 @@ class PageForm extends Response
                 }
                 // 不存在args参数时,设置类型
                 if (!$item['args']) {
-                    $item['args'] = new \ArrayObject;
+                    $item['args'] = new ArrayObject;
                 }
             } else {
                 $item = [
                     'key'   => $key,
                     'title' => $key,
                     'type'  => 'input',
-                    'args'  => new \ArrayObject,
+                    'args'  => new ArrayObject,
                 ];
             }
 
@@ -63,8 +66,8 @@ class PageForm extends Response
 
     /**
      * 系统配置
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-25
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-25
      */
     public function withSystemConfig()
     {

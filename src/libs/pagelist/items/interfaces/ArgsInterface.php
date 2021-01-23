@@ -1,6 +1,9 @@
 <?php
-declare (strict_types = 1);
+declare (strict_types=1);
+
 namespace eduline\admin\libs\pagelist\items\interfaces;
+
+use Closure;
 
 class ArgsInterface
 {
@@ -10,8 +13,9 @@ class ArgsInterface
 
     /**
      * 设置参数
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
      * @param    [type]                         $name  [description]
      * @param    [type]                         $value [description]
      */
@@ -24,8 +28,9 @@ class ArgsInterface
 
     /**
      * 获取参数
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
      * @param    [type]                         $name [description]
      * @return   [type]                               [description]
      */
@@ -41,8 +46,9 @@ class ArgsInterface
 
     /**
      * 格式化数据
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
      * @return   array
      */
     public function toArray(): array
@@ -56,8 +62,9 @@ class ArgsInterface
 
     /**
      * 是否存在某个参数
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
      * @param    [type]                         $name 参数名
      * @return   boolean
      */
@@ -75,8 +82,9 @@ class ArgsInterface
 
     /**
      * 创建一个实例
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
      * @return   static
      */
     public static function make()
@@ -96,7 +104,7 @@ class ArgsInterface
 
     public function visible($visible = true)
     {
-        if ($visible instanceof \Closure) {
+        if ($visible instanceof Closure) {
             $visible = app()->invokeFunction($visible);
         }
 

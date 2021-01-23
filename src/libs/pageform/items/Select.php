@@ -1,5 +1,6 @@
 <?php
-declare (strict_types = 1);
+declare (strict_types=1);
+
 namespace eduline\admin\libs\pageform\items;
 
 use eduline\admin\libs\pageform\items\interfaces\ArgsInterface;
@@ -10,9 +11,10 @@ class Select extends ArgsInterface
 
     /**
      * 是否开启多选
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    bool|boolean                   $show [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param bool|boolean $show [description]
      * @return   self
      */
     public function multiple(bool $show = true): self
@@ -22,9 +24,10 @@ class Select extends ArgsInterface
 
     /**
      * 允许选择个数
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string|null                    为0表示不限制
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string|null                    为0表示不限制
      * @return   self
      */
     public function max(int $length = 0): self
@@ -38,9 +41,10 @@ class Select extends ArgsInterface
 
     /**
      * 是否合并选项显示
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    bool|boolean                   $megre [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param bool|boolean $megre [description]
      * @return   [type]                                [description]
      */
     public function megreTags(bool $megre = true): self
@@ -54,9 +58,10 @@ class Select extends ArgsInterface
 
     /**
      * 默认提示文字
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string|null                    $placeholder [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string|null $placeholder [description]
      * @return   self
      */
     public function placeholder(string $placeholder = null): self
@@ -66,9 +71,10 @@ class Select extends ArgsInterface
 
     /**
      * 设置选项
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-25
-     * @param    array                          $options 选项项目 ['title'=>'显示文字','value'=>'值']
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-25
+     *
+     * @param array $options 选项项目 ['title'=>'显示文字','value'=>'值']
      * @return   [type]                                  [description]
      */
     public function options(array $options)

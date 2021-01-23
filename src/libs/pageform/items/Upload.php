@@ -1,5 +1,6 @@
 <?php
-declare (strict_types = 1);
+declare (strict_types=1);
+
 namespace eduline\admin\libs\pageform\items;
 
 use eduline\admin\libs\pageform\items\interfaces\ArgsInterface;
@@ -10,9 +11,10 @@ class Upload extends ArgsInterface
 
     /**
      * 上传选择类型
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string                         $type options\UploadType::class
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string $type options\UploadType::class
      * @return   [type]                               [description]
      */
     public function uploadType(string $type): self
@@ -22,9 +24,10 @@ class Upload extends ArgsInterface
 
     /**
      * 是否自动上传,upload_type 为 default 时生效
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    bool|boolean                   $autoupload [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param bool|boolean $autoupload [description]
      * @return   self
      */
     public function autoupload(bool $autoupload = true): self
@@ -34,9 +37,10 @@ class Upload extends ArgsInterface
 
     /**
      * 接受的文件类型
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-12
-     * @param    string                         $accept [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-12
+     *
+     * @param string $accept [description]
      * @return   [type]                                 [description]
      */
     public function accept(string $accept = ''): self
@@ -46,9 +50,10 @@ class Upload extends ArgsInterface
 
     /**
      * 设置允许最大个数 upload_type != 'avatar' 生效
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-12
-     * @param    int|integer                    $limit [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-12
+     *
+     * @param int|integer $limit [description]
      * @return   [type]                                [description]
      */
     public function limit(int $limit = 1): self
@@ -58,9 +63,10 @@ class Upload extends ArgsInterface
 
     /**
      * 默认提示文字
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-06
-     * @param    string|null                    $placeholder [description]
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-06
+     *
+     * @param string|null $placeholder [description]
      * @return   self
      */
     public function placeholder(string $placeholder = null): self
@@ -68,17 +74,17 @@ class Upload extends ArgsInterface
         return $this->setArgs('placeholder', $placeholder);
     }
 
-    
     /**
      * 文件列表的类型 upload_type 为 'drag', 'custom', 'default'生效
-     * @Author   Martinsun<syh@sunyonghong.com>
-     * @DateTime 2020-03-12
-     * @param    string                         $listType options\listType::class
+     * Author   Martinsun<syh@sunyonghong.com>
+     * Date:  2020-03-12
+     *
+     * @param string $listType options\listType::class
      * @return   [type]                                   [description]
      */
-    public function listType(string $listType):self
+    public function listType(string $listType): self
     {
-    	return $this->setArgs('list_type', $listType);
+        return $this->setArgs('list_type', $listType);
     }
 
 }

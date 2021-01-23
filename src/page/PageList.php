@@ -1,7 +1,9 @@
 <?php
-declare (strict_types = 1);
+declare (strict_types=1);
+
 namespace eduline\admin\page;
 
+use ArrayObject;
 use eduline\admin\page\interfaces\Response;
 
 class PageList extends Response
@@ -37,10 +39,10 @@ class PageList extends Response
             }
             if (is_callable([$list, 'total'])) {
                 $page = [
-                    'total'       => (int) $list->total(),
-                    'listRows'    => (int) $list->listRows(),
-                    'currentPage' => (int) $list->currentPage(),
-                    'lastPage'    => (int) $list->lastPage(),
+                    'total'       => (int)$list->total(),
+                    'listRows'    => (int)$list->listRows(),
+                    'currentPage' => (int)$list->currentPage(),
+                    'lastPage'    => (int)$list->lastPage(),
                 ];
 
                 $this->assignList['paginate'] = $page;
@@ -97,7 +99,7 @@ class PageList extends Response
                 // title与key一致
                 if (!$item['title'] && $item['title'] !== false) {
                     $item['title'] = $key;
-                } elseif ($item['title'] === false) {
+                } else if ($item['title'] === false) {
                     $item['title'] = '';
                 }
             } else {
@@ -105,7 +107,7 @@ class PageList extends Response
                     'key'   => $key,
                     'title' => $key,
                     'type'  => 'input',
-                    'args'  => new \ArrayObject,
+                    'args'  => new ArrayObject,
                 ];
             }
 
