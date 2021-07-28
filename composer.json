@@ -5,10 +5,12 @@
     "php": ">=7.1.0"
   },
   "license": "Apache-2.0",
-  "authors": [{
-    "name": "xiaosun",
-    "email": "syh@sunyonghong.com"
-  }],
+  "authors": [
+    {
+      "name": "xiaosun",
+      "email": "syh@sunyonghong.com"
+    }
+  ],
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
